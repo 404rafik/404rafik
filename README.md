@@ -1,16 +1,25 @@
-## Hi there 👋
+# 👋 Hello, I'm Rafik
 
-<!--
-**404rafik/404rafik** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### 🛠️ What I do
 
-Here are some ideas to get you started:
+- 🐧 **Open Source:** Linux (Ubuntu!), and general advocacy.
+- 🗳️ **Tech Diplomacy:** Connecting governments, NGOs, and the private sector for sustainable development.
+- 🚀 **Ventures:** Building tech architectures, digital media platforms, and investing in startups.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+### 📊 Open Source & Contribution Metrics
+
+<p align="left">
+  <!-- Main stats tracking commits, PRs, and overall impact -->
+  <img src="https://github-readme-stats.vercel.app/api?username=404rafik&show_icons=true&theme=radical&count_private=true" alt="GitHub Stats" height="150" />
+
+  <!-- Direct streak tracker showing active daily contribution habits -->
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=404rafik&theme=radical" alt="GitHub Streak" height="150" />
+</p>
+
+---
+
+### 📬 Connect
+
+✉️ **Email:** [rafik@ubuntu.com](mailto:rafik@ubuntu.com)
