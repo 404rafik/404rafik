@@ -8,7 +8,7 @@
 
 ---
 
-### 📊 Open Source & Contribution Metrics
+### 📊 GitHub Contribution Metrics
 
 <p align="left">
    <!-- Direct streak tracker showing active daily contribution habits -->
