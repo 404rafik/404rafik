@@ -18,10 +18,25 @@ jobs:
           echo "token length: ${#METRICS_TOKEN}"
           echo "token prefix: ${METRICS_TOKEN:0:4}"
           echo "token suffix: ${METRICS_TOKEN: -4}"
-          $(curl -s -H "Authorization: token ${METRICS_TOKEN}" https://api.github.com/user | head -c 200)
-          echo "REST check: $TOKEN_TEST"
-          $(curl -s -X POST -H "Authorization: bearer ${METRICS_TOKEN}" -H "Content-Type: application/json" \
+          RES1=$(curl -s -H "Authorization: token ${METRICS_TOKEN}" https://api.github.com/user | head -c 200)
+          echo "REST check: $RES1"
+          RES2=$(curl -s -X POST -H "Authorization: bearer ${METRICS_TOKEN}" -H "Content-Type: application/json" \
             -d '{"query":"query { user(login: \"404rafik\") { login } }"}' https://api.github.com/graphql | head -c 200)
-          echo "GraphQL check: $GRAPHQL_TEST"
+          echo "GraphQL check: $RES2"
         env:
           METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header
+          base_indepth: yes
+          plugin_achievements: yes
+          plugin_achievements_only: >
+            polyglot, stargazer, sponsor, deployer, member,
+            maintainer, developer, manager, influencer, investor,
+            farmer, worker, researcher, master, architect, collaborator, organizer
+          plugin_achievements_display: compact
+          plugin_achievements_secrets: yes
+          plugin_achievements_threshold: C
