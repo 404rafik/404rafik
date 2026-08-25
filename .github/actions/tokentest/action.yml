@@ -1,0 +1,36 @@
+name: Token Test Composite
+description: Replicates the lowlighter/metrics .env build from toJson(inputs)
+inputs:
+  token:
+    description: token to test
+    required: true
+outputs:
+  token_received:
+    description: token as seen via toJson pipeline
+    value: ${{ steps.dump.outputs.tok }}
+  token_len:
+    description: length
+    value: ${{ steps.dump.outputs.len }}
+runs:
+  using: composite
+  steps:
+    - name: Dump what the .env would contain
+      id: dump
+      shell: bash
+      env:
+        INPUTS: ${{ toJson(inputs) }}
+      run: |
+        echo "=== raw INPUTS (first 300 chars) ==="
+        echo "$INPUTS" | head -c 300
+        echo ""
+        echo "=== jq @uri extraction (as lowlighter does) ==="
+        for INPUT in $(echo "$INPUTS" | jq -r 'to_entries|map("INPUT_\(.key|ascii_upcase)=\(.value|@uri)")|.[]'); do
+          echo "$INPUT"
+          if [[ "$INPUT" == INPUT_TOKEN=* ]]; then
+            VAL="${INPUT#INPUT_TOKEN=}"
+            echo "value first4: ${VAL:0:4} last4: ${VAL: -4}"
+            echo "len: ${#VAL}"
+            echo "tok=$VAL" >> "$GITHUB_OUTPUT"
+            echo "len=${#VAL}" >> "$GITHUB_OUTPUT"
+          fi
+        done
