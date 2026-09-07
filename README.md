@@ -10,8 +10,11 @@
 
 ### 📊 GitHub Contribution Metrics
 
-![streak](https://streak-stats.demolab.com?user=404rafik&date_format=j%20M%5B%20Y%5D)
 ![metrics](./metrics.svg)
+
+### 📊 GitHub Contribution Streaks
+
+![streak](https://streak-stats.demolab.com?user=404rafik&date_format=j%20M%5B%20Y%5D)
 
 ---
 
