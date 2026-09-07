@@ -10,13 +10,8 @@
 
 ### 📊 GitHub Contribution Metrics
 
-<p align="left">
-   <!-- Direct streak tracker showing active daily contribution habits -->
-  <img src="https://streak-stats.demolab.com?user=404rafik&date_format=j%20M%5B%20Y%5D" alt="GitHub Streak"/>
-
-   <!-- Main stats tracking commits, PRs, and overall impact -->
-  <img src="./metrics.svg" alt="GitHub Stats" height="auto" />
-</p>
+(https://streak-stats.demolab.com?user=404rafik&date_format=j%20M%5B%20Y%5D)
+(./metrics.svg)
 
 ---
 
