@@ -13,20 +13,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Diagnostic - test secret in Actions env
-        run: |
-          echo "token length: ${#METRICS_TOKEN}"
-          echo "token prefix: ${METRICS_TOKEN:0:4}"
-          echo "token suffix: ${METRICS_TOKEN: -4}"
-          RES1=$(curl -s -H "Authorization: token ${METRICS_TOKEN}" https://api.github.com/user | head -c 200)
-          echo "REST check: $RES1"
-          RES2=$(curl -s -X POST -H "Authorization: bearer ${METRICS_TOKEN}" -H "Content-Type: application/json" \
-            -d '{"query":"query { user(login: \"404rafik\") { login } }"}' https://api.github.com/graphql | head -c 200)
-          echo "GraphQL check: $RES2"
-        env:
-          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
-
-      - uses: lowlighter/metrics@latest
+      - uses: gh-metrics/metrics@master
         with:
           filename: metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
