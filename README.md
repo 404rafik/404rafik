@@ -15,7 +15,7 @@
   <img src="https://streak-stats.demolab.com/?user=404rafik&theme=default" alt="GitHub Streak" height="150" />
 
    <!-- Main stats tracking commits, PRs, and overall impact -->
-  <img src="https://github-stats-extended.vercel.app/api?username=404rafik&rank_icon=github&show_icons=true&include_all_commits=true&theme=transparent" alt="GitHub Stats" height="auto" />
+  <img src="./metrics.svg" alt="GitHub Stats" height="auto" />
 </p>
 
 ---
